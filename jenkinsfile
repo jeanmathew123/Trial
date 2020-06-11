@@ -2,11 +2,27 @@ pipeline {
    agent any
 
    stages {
-      stage('PreBuild') {
+      stage('HelloWorld') {
          steps {
             echo 'Hello World'
-           } 
+         }
       }
-   }
+      stage('GoodBye') {
+         steps {
+            echo 'Good Bye'
+         }
+      }
+       stage('powershell') {
+               steps {
+                 powershell label: '', script: 'Write-Output "Hello PowerShell"'
+               }
+            }
 
+                  stage('gitbranch') {
+                          steps {
+                            echo "GIT_BRANCH"
+                          }
+                       }
 }
+}
+
